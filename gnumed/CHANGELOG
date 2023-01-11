@@ -51,6 +51,11 @@ FIX: Py3.13: will remove mailcap module
 # rel-1-8-maint
 ------------------------------------------------
 
+	1.8.9
+
+FIX: mime handling: py3 adjustments in file magic [thanks Andreas]
+FIX: bills: exception on generating invoice PDF [thanks l-ray]
+
 	1.8.8
 
 IMPROVED: PACS: better image/image buttons placement
@@ -59,6 +64,7 @@ FIX: py3.10+ *requires* ints for rescaling images [thanks henrique]
 FIX: patient tags: do not crash when rescaling image fails [thanks henrique]
 FIX: fix a number of errors found by pyflakes3
 FIX: lists: no more wx.LIST_HITTEST_ONITEMRIGHT in wxPython 4.2 [thanks jonas]
+FIX: date/time input: exception on entering "0"
 
 	1.8.7
 
@@ -2245,9 +2251,17 @@ FIX: PG14 does not support IS OF anymore, use pg_typeof()
 # gnumed_v22
 ------------------------------------------------
 
+	22.19
+
+FIX: bootstrapper: no more IS OF, use pg_typeof in v2->v3 transition [thanks Lennart]
+FIX: bootstrapper: CHAR -> TEXT cast in v19+ schema hashing on recent PGs
+
 	22.18
 
 IMPROVED: bootstrapper: schema "public" permissions and ownership as per PG 15
+IMPROVED: backup: avoid unnecessary recompression
+
+FIX: bootstrapper: schema hash function in v19+ databases
 
 	22.17
 
